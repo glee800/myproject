@@ -1,0 +1,48 @@
+using System;
+
+namespace CIS244Assn1
+{
+    class TemperatureConversion
+    {
+        static void Main(string[] args)
+        {
+            /* the try part of a try catch statement so that anything other than 
+             * the input of integers will produce an error */
+            try
+            {
+                /* prompting the user to input an integer that will 
+                 * be represented as a temperature in celsius */
+                Console.Write("Please input a temperature (integer) in °C: ");
+
+                /* the input from the user is read in and assigned to the variable "celsius"
+                 * int.Parse converts the input from a string into an integer so math can be done with it */
+                int celsius = int.Parse(Console.ReadLine());
+
+                /* outputing the number the user input in degrees celsius back to the user */
+                Console.WriteLine("Degrees Celsius: " + celsius + "°C");
+
+                /* the conversion from °C to Kelvin is °C + 273
+                 * the math done to obtain the conversion to K is done and assigned to the variable "kelvin"
+                 * the varialbe is represented as an integer by the int in front of it */
+                int kelvin = celsius + 273;
+
+                /* outputing to the user the °C they input and the converted temperature in Kelvin */
+                Console.WriteLine(celsius.ToString() + "°C " + "in Kelvin is: " + kelvin.ToString() + "K");
+
+                /* the conversion from °C to °F is (9/5)*°C+32, so that equation is assigned to the variable "fahrenheit"
+                 * int is in front of the variable to signify it is an integer */
+                int fahrenheit = (((9 / 5) * celsius) + 32);
+
+                /* outputing to the user the °C they input and the converted temperature in °F */
+                Console.WriteLine(celsius.ToString() + "°C " + "in Fahrenheit is: " + fahrenheit.ToString() + "°F");
+            }
+            /* the catch part of a try catch statement to catch the exception called "ex" */
+            catch (Exception ex)
+
+            {   /* outputting to the user that they entered an invalid input along with the exception: ex, which will 
+                 * let them know the type of exception */
+                Console.WriteLine("You have to enter an integer " + ex);
+             }      
+        }
+    }
+}
